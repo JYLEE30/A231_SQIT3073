@@ -6,5 +6,6 @@ os.system('cls')
 #print(len(a))
 
 # a = input("tell me your name")
+
 name = str(input("Tell me your name : "))
 print (name)
