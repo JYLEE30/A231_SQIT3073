@@ -1,5 +1,18 @@
+#Eg 1
 print('Hello World')
 print()
+
+#Eg 2
+a = 'my name is jian yuan'
+print(a)
+print(len(a))
+
+#Eg 3
+import os
+os.system('cls')
+
+name = str(input("Tell me your name : "))
+print (name)
 
 a = 'string'
 a = 'tail' #Overwrite above line
