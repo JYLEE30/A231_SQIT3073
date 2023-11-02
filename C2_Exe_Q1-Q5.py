@@ -41,7 +41,26 @@ else:
     least = float(num3);
 
 print("The least number is:", "%.2f" % least)
+print()
 
 #Question 6
+temp = float(input("Please enter the temperature (Celsius): "))
+
+if ((temp==0) and (temp<=30)):
+    print("Status: Cold")
+elif ((temp>30) and (temp<=50)):
+    print("Status: Medium")
+elif ((temp>50) and (temp<=70)):
+    print("Status: Hot")
+elif ((temp>70) and (temp<=100)):
+    print("Status: Very Hot")
+
+print()
+
 #Question 7
+
 #Question 8
+
+#Question 9
+
+#Question 10
