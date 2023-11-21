@@ -9,9 +9,9 @@ print("\n--------------- Welcome to House Loan Calculator ---------------")
 
 while True:
     print("\nPlease choose what you want to do...")
-    print("\nPress 1 to calculate new loan")
-    print("Press 2 to view past record")
-    print("Press E to exit calculator")
+    print("\nPress button 1 to calculate new loan")
+    print("Press button 2 to view past record")
+    print("Press button E to exit calculator")
     
     menuSelection1 = input("\nPlease enter an action: ")
 
@@ -41,7 +41,7 @@ while True:
         elif dSR > 70:
             eligibility = "Not Eligible to get the loan as your Debt Service Ratio is above 70%"
 
-        previousLoanCalculations.append(HLC.loan_record(principal,monthly_payment,total_amount,dsr,eligibility))
+        previousLoanCalculations.append(HLC.loanRecord(principalLoanAmount, monthlyInstalment, totalAmountPayable, dSR, eligibility))
 
         print(f"\nMonthly Instalment: RM {round(monthlyInstalment,2)}")
         print(f"Total Amount Payable: RM{round(totalAmountPayable,2)}")
@@ -53,12 +53,20 @@ while True:
 
     if menuSelection1 == "2":
         if len(previousLoanCalculations) == 0:
-            print("\nNo past records...")
+            print("\nNo past records in the list...")
             input("\nTo continue, please press enter...")
             continue
         else:
-            for r in previousLoanCalculations:
-                print(previousLoanCalculations)
+            HLC.display_PreviousLoanCalculations(previousLoanCalculations)
+
+            print("\nTo delete past data please press button D.")
+            print("To return, please press enter...")
+
+            menuSelection2 = input("\nPlease enter an action: ")
+            if menuSelection2 == "d" or menuSelection2 == "D":
+                HLC.delete_PreviousLoanCalculations(previousLoanCalculations)
+            else:
+                continue
 
     elif menuSelection1 == "e" or menuSelection1 == "E":
         print("\nThank you for using, feel free to come back again ~\n")

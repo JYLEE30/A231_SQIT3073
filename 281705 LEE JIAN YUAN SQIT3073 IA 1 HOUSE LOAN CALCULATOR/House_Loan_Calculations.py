@@ -22,18 +22,32 @@ def calculate_DSR(applicantMonthlyIncome, otherMonthlyFinancialCommitments, mont
     dSR = (totalCommitmentsPerMonth / applicantMonthlyIncome) * 100
     return dSR
 
-def display_previous_calculations(previousLoanCalculations):
-    print("\nPrevious Loan Calculations:")
-    i=1
-    for record in previousLoanCalculations:
-        
-        print(str(i) + ". Principal: RM " + str(round(record.principal,2)) 
-        + ",\n   Monthly Instalment: RM " + str(round(record.monthly_payment,2))
-        + ",\n   Total Amount Payable: RM " + str(round(record.total_amount,2))
-        + ",\n   DSR: " + str(round(record.dsr,2)) + "%" 
-        + ",\n   Eligibility :" + str(record.eligibility))
-        print()
-        i+=1
+class loanRecord:
+    def __init__(self, principalLoanAmount, monthlyInstalment, totalAmountPayable, dSR, eligibility):
+        self.principalLoanAmount = principalLoanAmount
+        self.monthlyInstalment = monthlyInstalment
+        self.totalAmountPayable = totalAmountPayable
+        self.dSR = dSR
+        self.eligibility = eligibility
 
-    print() 
-    input("Press Enter to continue....")
+def display_PreviousLoanCalculations(previousLoanCalculations):
+    print("\nPrevious Loan Calculation Records")
+
+    i=1
+    for r in previousLoanCalculations:
+
+        print("\nRecord " + str(i) 
+            + "\nPrincipal: RM " + str(round(r.principalLoanAmount,2)) 
+            + "\nMonthly Instalment: RM " + str(round(r.monthlyInstalment,2))
+            + "\nTotal Amount Payable: RM " + str(round(r.totalAmountPayable,2))
+            + "\nDSR: " + str(round(r.dSR,2)) + "%" 
+            + "\nEligibility :" + str(r.eligibility))
+        i += 1
+
+def delete_PreviousLoanCalculations(previousLoanCalculations):
+    try:
+        d = int(input("\nPlease select the record you want to delete: "))
+        del previousLoanCalculations[d-1]
+        print("\nSelected record succesfully deleted!")
+    except:
+        print("\nCannot find record! Please select a valid record: ")
