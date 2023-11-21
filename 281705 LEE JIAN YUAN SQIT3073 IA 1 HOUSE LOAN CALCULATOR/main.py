@@ -58,7 +58,7 @@ while True:
             continue
         else:
             HLC.display_PreviousLoanCalculations(previousLoanCalculations)
-
+            
             print("\nTo delete past data please press button D.")
             print("To return, please press enter...")
 
