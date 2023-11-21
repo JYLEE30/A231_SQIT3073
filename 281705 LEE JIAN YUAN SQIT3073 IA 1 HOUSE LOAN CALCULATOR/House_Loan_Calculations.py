@@ -1,5 +1,6 @@
 import os
 
+# Monthly Instalment formula
 def calculate_MonthlyInstalment(principalLoanAmount, annualInterestRate, loanTerm):
     totalInstalmentNo = loanTerm * 12
     principalPerMonth = principalLoanAmount / totalInstalmentNo
@@ -10,18 +11,21 @@ def calculate_MonthlyInstalment(principalLoanAmount, annualInterestRate, loanTer
     monthlyInstalment = principalPerMonth + interestPerMonth
     return monthlyInstalment
 
+# Total Amount Payable formula
 def calculate_TotalAmountPayable(principalLoanAmount, annualInterestRate, loanTerm):
     totalPrincipalInterest = principalLoanAmount*(annualInterestRate / 100)*loanTerm
     
     totalAmountPayable = principalLoanAmount + totalPrincipalInterest
     return totalAmountPayable
 
+# Debt Service Ratio formula
 def calculate_DSR(applicantMonthlyIncome, otherMonthlyFinancialCommitments, monthlyInstalment):
     totalCommitmentsPerMonth = otherMonthlyFinancialCommitments + monthlyInstalment
     
     dSR = (totalCommitmentsPerMonth / applicantMonthlyIncome) * 100
     return dSR
 
+# Create a constructor class to record loan calculations
 class loanRecord:
     def __init__(self, principalLoanAmount, monthlyInstalment, totalAmountPayable, dSR, eligibility):
         self.principalLoanAmount = principalLoanAmount
@@ -30,6 +34,7 @@ class loanRecord:
         self.dSR = dSR
         self.eligibility = eligibility
 
+# Display all loan calculation record in list
 def display_PreviousLoanCalculations(previousLoanCalculations):
     print("\nPrevious Loan Calculation Records")
 
@@ -44,6 +49,7 @@ def display_PreviousLoanCalculations(previousLoanCalculations):
             + "\nEligibility :" + str(r.eligibility))
         i += 1
 
+# Delete a specific loan calculation record in list
 def delete_PreviousLoanCalculations(previousLoanCalculations):
     try:
         d = int(input("\nPlease select the record you want to delete: "))
