@@ -8,7 +8,7 @@ import numpy as np
 os.system("cls")
 
 # Replace the directory with the correct path to your Excel file
-data = pd.read_excel(r"C:\Users\leeji\OneDrive\Desktop\(3) SQIT3073 (A) Business Analytic Programming\Python Programme\SQIT3073 GA 1\GA1_Chart_4.2_Data.xlsx",sheet_name="Sheet1")
+data = pd.read_excel(r"C:\Users\leeji\OneDrive\Desktop\(3) SQIT3073 (A) Business Analytic Programming\Python Programme\A231 SQIT3073 GA 1\GA1_Chart_4.2_Data.xlsx",sheet_name="Sheet1")
 
 # Read the Excel file into a DataFrame
 df = pd.DataFrame(data)
