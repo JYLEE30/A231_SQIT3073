@@ -8,9 +8,11 @@ if platform.system() == 'Windows':
 else:
         os.system('clear')
 
+        
+excel_file = '3.3.xlsx'
 
 # Read extracted table from xlsx file
-data = pd.read_excel(r"C:\Users\leeji\OneDrive\Desktop\(3) SQIT3073 (A) Business Analytic Programming\Python Programme\SQIT3073 GA 1\GA1_Chart_4.1_Data.xlsx",sheet_name="Sheet1")
+data = pd.read_excel(excel_file, sheet_name="Sheet1")
 df = pd.DataFrame(data)
 
 # Convert 'Period' to string and concatenate with 'Quarter'
