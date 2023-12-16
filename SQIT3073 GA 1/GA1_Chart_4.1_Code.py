@@ -9,7 +9,7 @@ else:
         os.system('clear')
 
         
-excel_file = '.xlsx'
+excel_file = 'GA1_Chart_4.1_Data.xlsx'
 
 # Read extracted table from xlsx file
 data = pd.read_excel(excel_file, sheet_name="Sheet1")
